@@ -56,21 +56,18 @@ def create_sg(ec2, vpc):
     sg = ec2.SecurityGroup(list(vpc.security_groups.all())[0].id)
     sg.create_tags(Tags=[{"Key": "Name", "Value": "vtest-sg"}])
     sg.authorize_ingress(
-        #CidrIp='90.154.23.250/32',
         CidrIp='0.0.0.0/0',
         IpProtocol='icmp',
         FromPort=-1,
         ToPort=-1
     )
     sg.authorize_ingress(
-        #CidrIp='90.154.23.250/32',
         CidrIp='0.0.0.0/0',
         IpProtocol='tcp',
         FromPort=22,
         ToPort=22
     )
     sg.authorize_ingress(
-        #CidrIp='90.154.23.250/32',
         CidrIp='0.0.0.0/0',
         IpProtocol='udp',
         FromPort=1194,
