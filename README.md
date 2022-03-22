@@ -3,5 +3,3 @@
 - To remove all changes you made use aws_cleanup.py file
 - aws_provision.sh - this is a shell script where you can put config for aws instance
 
-
-qqq
